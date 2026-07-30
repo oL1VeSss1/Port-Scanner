@@ -1,42 +1,29 @@
 ````markdown
-# 🔍 Python Port Scanner
+# Python Port Scanner
 
-A multithreaded TCP port scanner written in Python.
+A simple multithreaded TCP port scanner written in Python.
 
-This project scans an entire **/24 subnet** for open TCP ports using Python's `socket` module and `ThreadPoolExecutor` for concurrent scanning.
+## About
 
----
+This program scans TCP ports on all hosts in a `/24` network.
 
-## ✨ Features
+The scanner:
 
-- 🌐 Resolve a hostname to its IP address
-- 📡 Scan every host in a **/24 network**
-- 🔎 Scan a custom range of TCP ports
-- ⚡ Multithreaded scanning with `ThreadPoolExecutor`
-- ⏱ Measure total scan time
-- 🛠 Simple command-line interface
+- Resolves a hostname to an IPv4 address
+- Generates a `/24` subnet using the `ipaddress` module
+- Scans a user-defined range of TCP ports
+- Uses multithreading with `ThreadPoolExecutor`
+- Displays all open TCP ports
+- Measures the total scan time
 
----
+## Modules
 
-## 📚 Technologies
-
-- Python 3
 - socket
 - concurrent.futures
 - ipaddress
 - time
 
----
-
-## 📂 Project Structure
-
-```text
-Port_scanner.py
-```
-
----
-
-## 🚀 Usage
+## Usage
 
 Run the program:
 
@@ -52,7 +39,7 @@ Example:
 [*] Enter end_port: 100
 ```
 
-Example output:
+Output:
 
 ```text
 [+] TCP PORT 80 IS OPEN ON 142.250.xxx.xxx
@@ -61,61 +48,26 @@ Example output:
 Finished in 2.34 second(s)
 ```
 
----
+## Features
 
-## ⚙️ How It Works
+- Hostname resolution
+- TCP port scanning
+- Custom port range
+- Scan an entire `/24` subnet
+- Multithreaded scanning
 
-1. The program asks for a hostname.
-2. The hostname is resolved to an IPv4 address.
-3. A `/24` network is generated using the `ipaddress` module.
-4. Every host in the subnet is scanned.
-5. Every selected TCP port is checked using `socket.connect_ex()`.
-6. Open ports are displayed.
-7. The total execution time is printed.
+## Future Improvements
 
----
+- Better error handling
+- Configurable thread count
+- Command-line arguments
+- Support for different subnet sizes
+- Service detection
+- Banner grabbing
 
-## 📌 Current Limitations
+## Disclaimer
 
-- TCP scanning only
-- IPv4 only
-- Fixed `/24` subnet
-- No banner grabbing
-- No service detection
-- Command-line interface only
+This project was created for educational purposes.
 
----
-
-## 🔮 Planned Improvements
-
-- [ ] Banner grabbing
-- [ ] Service/version detection
-- [ ] UDP scanning
-- [ ] CIDR support (`/16`, `/24`, `/28`, etc.)
-- [ ] Save results to JSON/CSV
-- [ ] Command-line arguments (`argparse`)
-- [ ] Configurable thread count
-- [ ] Colored terminal output
-- [ ] Better exception handling
-- [ ] Progress bar
-
----
-
-## 📖 Educational Purpose
-
-This project was created to practice:
-
-- Python networking
-- Multithreading
-- TCP sockets
-- IP addressing
-- Concurrent programming
-
----
-
-## 📜 License
-
-This project is intended for **educational and authorized security testing only**.
-
-Please use it responsibly and only on systems you own or have permission to test.
+Use it only on systems you own or have permission to test.
 ````
