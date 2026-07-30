@@ -1,73 +1,41 @@
-````markdown
-# Python Port Scanner
+# 🔎 Port Scanner
 
-A simple multithreaded TCP port scanner written in Python.
+A simple TCP port scanner written in Python.
 
-## About
+## 📖 Description
 
-This program scans TCP ports on all hosts in a `/24` network.
+This program:
 
-The scanner:
+- 🌐 Resolves a hostname to an IP address.
+- 🖥️ Scans all hosts in the `/24` subnet.
+- 🚪 Checks a user-defined range of TCP ports.
+- ✅ Displays open TCP ports.
+- ⏱️ Shows the total scan time.
 
-- Resolves a hostname to an IPv4 address
-- Generates a `/24` subnet using the `ipaddress` module
-- Scans a user-defined range of TCP ports
-- Uses multithreading with `ThreadPoolExecutor`
-- Displays all open TCP ports
-- Measures the total scan time
+## 📦 Modules Used
 
-## Modules
+- `socket`
+- `concurrent.futures`
+- `ipaddress`
+- `time`
+- `datetime`
 
-- socket
-- concurrent.futures
-- ipaddress
-- time
+## 🚀 Usage
 
-## Usage
-
-Run the program:
+Run the script:
 
 ```bash
 python Port_scanner.py
 ```
 
-Example:
+Then enter:
 
-```text
-[*] Enter a host (Example: google.com): google.com
-[*] Enter start_port: 20
-[*] Enter end_port: 100
-```
+- 🌍 Host (e.g. `google.com`)
+- 🔢 Start port
+- 🔢 End port
 
-Output:
+## ⚠️ Note
 
-```text
-[+] TCP PORT 80 IS OPEN ON 142.250.xxx.xxx
-[+] TCP PORT 443 IS OPEN ON 142.250.xxx.xxx
+This project was created for learning purposes.
 
-Finished in 2.34 second(s)
-```
-
-## Features
-
-- Hostname resolution
-- TCP port scanning
-- Custom port range
-- Scan an entire `/24` subnet
-- Multithreaded scanning
-
-## Future Improvements
-
-- Better error handling
-- Configurable thread count
-- Command-line arguments
-- Support for different subnet sizes
-- Service detection
-- Banner grabbing
-
-## Disclaimer
-
-This project was created for educational purposes.
-
-Use it only on systems you own or have permission to test.
-````
+Please use it only on systems you own or have permission to test.
